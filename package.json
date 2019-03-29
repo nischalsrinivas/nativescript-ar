@@ -1,0 +1,92 @@
+{
+  "_from": "nativescript-ar@^0.6.2",
+  "_id": "nativescript-ar@0.6.2",
+  "_inBundle": false,
+  "_integrity": "sha512-KGxpWfTbZ0j1o/WVsGrVhkxtdwM8CYNrtMs54DK/t79rA2lL9PZ4I9hvy06yPwkcfnZJYno/Mdm92VDta5SCaA==",
+  "_location": "/nativescript-ar",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "nativescript-ar@^0.6.2",
+    "name": "nativescript-ar",
+    "escapedName": "nativescript-ar",
+    "rawSpec": "^0.6.2",
+    "saveSpec": null,
+    "fetchSpec": "^0.6.2"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/nativescript-ar/-/nativescript-ar-0.6.2.tgz",
+  "_shasum": "d1b7625c6f78443ef2a26ecf2cb09691ae7a76bc",
+  "_spec": "nativescript-ar@^0.6.2",
+  "_where": "/Users/srireddy/Documents/microapps_ws/eloha-hrportal-new/testflight/eloha",
+  "author": {
+    "name": "Eddy Verbruggen",
+    "email": "eddyverbruggen@gmail.com",
+    "url": "https://github.com/eddyverbruggen"
+  },
+  "bootstrapper": "nativescript-plugin-seed",
+  "bugs": {
+    "url": "https://github.com/EddyVerbruggen/nativescript-ar/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "NativeScript Augmented Reality plugin. ARKit on iOS and (in the future) ARCore on Android.",
+  "devDependencies": {
+    "nativescript-dev-typescript": "~0.7.9",
+    "rimraf": "^2.5.0",
+    "tns-core-modules": "~5.1.2",
+    "tns-platform-declarations": "next",
+    "tslint": "~5.4.3",
+    "typescript": "~3.1.1"
+  },
+  "homepage": "https://github.com/EddyVerbruggen/nativescript-ar",
+  "keywords": [
+    "ecosystem:nativescript",
+    "NativeScript",
+    "TypeScript",
+    "Android",
+    "iOS",
+    "AR",
+    "ARKit",
+    "ARCore",
+    "Augmented Reality"
+  ],
+  "license": "MIT",
+  "main": "ar",
+  "name": "nativescript-ar",
+  "nativescript": {
+    "platforms": {
+      "android": "3.0.0",
+      "ios": "3.0.0"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyverbruggen/nativescript-ar.git"
+  },
+  "scripts": {
+    "build": "npm i && npm run tsc",
+    "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**' --exclude '**/typings/**'",
+    "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
+    "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
+    "demo.android.clean": "npm i && npm run tsc && cd ../demo && tns plugin remove nativescript-ar && tns plugin add ../src && tns run android --syncAllFiles",
+    "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
+    "demo.reset": "cd ../demo && rimraf platforms",
+    "generate.typings.ios": "cd ../demo && TNS_DEBUG_METADATA_PATH=\"$(pwd)/metadata\" tns build ios && TNS_TYPESCRIPT_DECLARATIONS_PATH=\"$(pwd)/typings\" tns build ios && echo 'Now look for your library typings in demo-ng/typings!'",
+    "plugin.link": "npm link && cd ../demo && npm link nativescript-ar && cd ../src",
+    "plugin.prepare": "npm run tsc && cd ../demo && tns plugin remove nativescript-ar && tns plugin add ../src",
+    "plugin.tscwatch": "npm run tsc -- -w",
+    "postclone": "npm i && cd ../demo && npm i && cd ../src && npm run plugin.link",
+    "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+    "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+    "tsc": "tsc -skipLibCheck && tsc ../demo/*.ts -skipLibCheck",
+    "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\" --exclude \"**/typings/**\""
+  },
+  "typings": "index.d.ts",
+  "version": "0.6.2"
+}
